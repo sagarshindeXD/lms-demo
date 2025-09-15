@@ -1,5 +1,8 @@
 import { Box, Button, Container, Flex, Grid, GridItem, Heading, HStack, Icon, Image, Input, InputGroup, InputLeftElement, List, ListIcon, ListItem, Select, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Tag, Text, Textarea, useColorModeValue, VStack, Wrap, WrapItem, Badge, Avatar, Divider, useToast } from '@chakra-ui/react';
-import { FaCheckCircle, FaClock, FaGlobe, FaPlay, FaStar, FaStarHalfAlt, FaRegStar, FaRegClock, FaRegUser, FaRegCalendarAlt } from 'react-icons/fa';
+import { FaCheckCircle, FaClock, FaGlobe, FaPlay, FaStar, FaStarHalfAlt, FaRegStar, FaRegClock, FaRegUser, FaRegCalendarAlt, FaRegFile, FaDownload, FaMobileAlt, FaThumbsUp, FaThumbsDown, FaUserGraduate, FaBook, FaTwitter, FaLinkedin, FaGithub, FaChevronDown } from 'react-icons/fa';
+import { FaInfinity, FaCertificate } from 'react-icons/fa6';
+import { SimpleGrid } from '@chakra-ui/react';
+import { Link as RouterLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
