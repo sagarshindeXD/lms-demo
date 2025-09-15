@@ -73,11 +73,13 @@ export const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <Text fontWeight="bold" mb={4} fontSize="lg">WELCOME TO EDUGENZ</Text>
-                <Heading as="h1" size="3xl" fontWeight="bold" mb={6} lineHeight="1.2">
+                <Text fontWeight="bold" mb={4} fontSize="lg" color={useColorModeValue('white', 'white')}>
+                  WELCOME TO EDUGENZ
+                </Text>
+                <Heading as="h1" size="3xl" fontWeight="bold" mb={6} lineHeight="1.2" color={useColorModeValue('white', 'white')}>
                   Learn New Skills Online with Top Educators
                 </Heading>
-                <Text fontSize="xl" mb={8} opacity={0.9}>
+                <Text fontSize="xl" mb={8} opacity={0.9} color={useColorModeValue('whiteAlpha.900', 'whiteAlpha.900')}>
                   Access 5,000+ courses taught by industry experts. Start learning today and boost your career!
                 </Text>
                 <Stack direction={{ base: 'column', sm: 'row' }} spacing={4}>
@@ -94,7 +96,7 @@ export const Home = () => {
                   <Button
                     size="lg"
                     variant="outline"
-                    color="white"
+color={useColorModeValue('white', 'white')}
                     _hover={{ bg: 'whiteAlpha.200' }}
                   >
                     View Courses
