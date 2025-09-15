@@ -1,6 +1,4 @@
 import { Box, Button, Container, Flex, Grid, GridItem, Heading, HStack, Icon, Image, Input, InputGroup, InputLeftElement, List, ListIcon, ListItem, Select, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Tag, Text, Textarea, useColorModeValue, VStack, Wrap, WrapItem, Badge, Avatar, Divider, useToast } from '@chakra-ui/react';
-import { IconType } from 'react-icons';
-import { Course, Review, Activity, ActivityType } from '@/types';
 import { FaCheckCircle, FaClock, FaGlobe, FaPlay, FaStar, FaStarHalfAlt, FaRegStar, FaRegClock, FaRegUser, FaRegCalendarAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
@@ -9,7 +7,57 @@ import { useParams } from 'react-router-dom';
 const MotionBox = motion(Box);
 
 // Mock course data - in a real app, this would come from an API
-const courseData = {
+interface CourseData {
+  id: number;
+  title: string;
+  instructor: {
+    name: string;
+    avatar: string;
+    title: string;
+    rating: number;
+    students: number;
+    courses: number;
+  };
+  category: string;
+  level: string;
+  rating: number;
+  reviewsCount: number;
+  students: number;
+  duration: string;
+  lectures: number;
+  resources: number;
+  price: number;
+  discountPrice: number;
+  language: string;
+  lastUpdated: string;
+  image: string;
+  description: string;
+  longDescription: string;
+  whatYouWillLearn: string[];
+  requirements: string[];
+  whoIsThisFor: string[];
+  curriculum: Array<{
+    section: string;
+    lectures: number;
+    duration: string;
+    items: Array<{
+      title: string;
+      duration: string;
+      preview?: boolean;
+    }>;
+  }>;
+  reviews: Array<{
+    id: number;
+    user: string;
+    avatar: string;
+    rating: number;
+    date: string;
+    comment: string;
+    likes: number;
+  }>;
+}
+
+const courseData: CourseData = {
   id: 1,
   title: 'Complete Web Development Bootcamp',
   instructor: {
@@ -23,7 +71,7 @@ const courseData = {
   category: 'Web Development',
   level: 'Beginner',
   rating: 4.8,
-  reviews: 2480,
+  reviewsCount: 2480,
   students: 12500,
   duration: '35 hours',
   lectures: 320,
@@ -194,7 +242,7 @@ export const CourseDetail: React.FC = () => {
             <Flex align="center" mb={6}>
               <RatingStars rating={courseData.rating} />
               <Text ml={2} color={mutedText}>
-                ({courseData.reviews.toLocaleString()} reviews)
+                ({courseData.reviewsCount.toLocaleString()} reviews)
               </Text>
               <Text mx={2}>•</Text>
               <Text color={mutedText}>
